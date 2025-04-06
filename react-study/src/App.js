@@ -18,11 +18,11 @@ function App() {
       </div>
       
       <button onClick={ () => {
-        let copy = [...글제목];
-        copy[0] = '프로그래밍 툴 추천';
-        글제목변경(copy);
-      } }>글수정</button>
-      
+        let copy2 = [...글제목];
+        copy2.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
+        글제목변경(copy2);
+      } }>글정렬</button>
+
       <button onClick={ () => {
         let copy = [...글제목];
         copy[0] = '프로그래밍 툴 추천';
