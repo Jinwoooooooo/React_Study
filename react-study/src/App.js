@@ -7,8 +7,7 @@ import { useState } from 'react';
 function App() {
 
   let post = 'ReactStudy';
-  let [글제목, b] = useState(['프로그래밍 언어 추천','Java','Python']);
-  let zero = 0;
+  let [글제목, 글제목변경] = useState(['프로그래밍 언어 추천','자바','파이썬']);
   let [simpleCount, simpleCountFunc] = useState(0);
   let [count, changeCount] = useState(0);
 
@@ -17,6 +16,19 @@ function App() {
       <div className="black-nav">
         <h4>{ post }</h4>
       </div>
+      
+      <button onClick={ () => {
+        let copy = [...글제목];
+        copy[0] = '프로그래밍 툴 추천';
+        글제목변경(copy);
+      } }>글수정</button>
+      
+      <button onClick={ () => {
+        let copy = [...글제목];
+        copy[0] = '프로그래밍 툴 추천';
+        글제목변경(copy);
+      } }>글수정</button>
+
       <div className="list">
         <h4>{ 글제목[0] } <span onClick={() => { changeCount(count+1) }}>👍</span> { count } </h4>
         <p>2025년 04월 02일 발행</p>
